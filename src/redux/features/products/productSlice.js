@@ -4,7 +4,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   {
-    // id: productId,
     id: 1,
     name: "Product 1",
     price: 50,
@@ -14,7 +13,6 @@ const initialState = [
     date: "2022-10-10",
   },
   {
-    // id: productId,
     id: 2,
     name: "Product 2",
     price: 150,
@@ -31,8 +29,7 @@ const productSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.push({
-        // id: productId++,
-        id: state.length > 0 ? state[state.length - 1].id : 1,
+        id: state.length > 0 ? state[state.length - 1].id + 1: 1,
         ...action.payload,
       });
     },
